@@ -12,14 +12,11 @@ function App() {
   const [newsResult, setNewsResult] = useState();
   const [loadMore, setLoadMore] = useState(20);
 
-  useEffect(() => {
-    newsApi();
-  }, [category, newsArray, loadMore]);
-
   const newsApi = async () => {
     try {
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
       const news = await axios.get(
-        `https://newsapi.org/v2/top-headlines?country=ng&apiKey=${API_KEY}&category=${category}&pagesize=${loadMore}`
+        `${proxyUrl}https://newsapi.org/v2/top-headlines?country=ng&apiKey=${API_KEY}&category=${category}&pagesize=${loadMore}`
       );
       setNewsArray(news.data.articles);
       setNewsResult(news.data.newsResults);
@@ -28,7 +25,10 @@ function App() {
     }
   };
 
-  console.log(newsArray);
+  useEffect(() => {
+    newsApi();
+    // eslint-disable-next-line
+  }, [category, newsResult, loadMore]);
 
   return (
     <div className='App'>

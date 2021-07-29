@@ -52,19 +52,28 @@ const Footer = () => {
       <footer className={`${classes.footer}`}>
         <h1 className={classes.text}>
           Inshorts clone made by -{' '}
-          <a href='#' className={classes.link}>
+          <a
+            href='https://www.linkedin.com/in/omisakin-tunji-252744117'
+            className={classes.link}
+          >
             Olatunji Omisakin
           </a>
         </h1>
         <hr className={classes.horizontal} />
         <div className={classes.iconContainer}>
-          <a href='#' className={classes.link}>
+          <a
+            href='https://www.instagram.com/olatunjiomisakin/'
+            className={classes.link}
+          >
             <FontAwesomeIcon icon={faInstagramSquare} size='2x' />
           </a>
-          <a href='#' className={classes.link}>
+          <a
+            href='https://www.linkedin.com/in/omisakin-tunji-252744117'
+            className={classes.link}
+          >
             <FontAwesomeIcon icon={faLinkedin} size='2x' />
           </a>
-          <a href='#' className={classes.link}>
+          <a href='https://github.com/Tunji545' className={classes.link}>
             <FontAwesomeIcon icon={faLink} size='2x' />
           </a>
         </div>
